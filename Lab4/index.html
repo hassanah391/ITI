@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="clockBtn" style="
+        height: 20px;
+        background-color: rgb(19, 112, 241);
+        border-radius: 5px;
+      ">
+    Show clock
+  </button>
+  <div>
+    <p id="clockContent" style="font-size: large; color: green;"></p>
+  </div>
+  <div>
+    <form id="loginForm" method="get" action="./welcome.html">
+      <label for="username"> username</label>
+      <input type="text" id="username" name="username" value="Enter your username here">
+      <br>
+      <label for="password"> password</label>
+      <input type="password" id="password" name="password">
+      <br>
+      <input type="submit" name="login" id="login" style="margin-top: 10px; border-radius: 5px; align-self: center; margin-left: 115px;" value="login">
+    </form>
+  </div>
+  <div style="margin-top: 20px;">
+    <a id="openAdLink" style="margin-right: 15px; margin-left: 15px; font-size: medium; border: solid black; background-color: rgb(5, 233, 81);"> Open ad page</a>
+    <a id="closeAdLink" style="font-size: medium; border: solid black; background-color: rgb(229, 5, 46);"> Close ad page</a>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
