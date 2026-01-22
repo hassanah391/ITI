@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration Form</title>
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+
+    <form action="Thankyou.htm" method="get" id="registerForm">
+      <!-- Hidden User ID -->
+      <input type="hidden" name="userId" value="12345" />
+
+      <!-- Full Name -->
+      <label for="fullName" accesskey="f" >full name:</label><br />
+      <input
+        type="text"
+        id="fullName"
+        name="fullName"
+        placeholder="Enter your Name:"
+        required
+        tabindex="1"
+      />
+      <h4 id="invalidName" style="color: red; margin-left: 10px;" hidden>
+        invalid name
+      </h4>
+      <br /><br />
+
+      <!-- City -->
+      <label for="city" accesskey="c">city:</label><br />
+      <select id="city" name="city">
+        <option value>Select city</option>
+        <option value="cairo">Cairo</option>
+        <option value="alexandria">Alexandria</option>
+        <option value="minya">Minya</option>
+        <option value="baniSewif">Bani Sewif</option>
+        <option value="suez">Suez</option>
+      </select>
+      <br /><br />
+
+      <!-- Email -->
+      <label for="email" accesskey="e">email:</label><br />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        tabindex="2"
+      /><br /><br />
+
+      <!-- Password -->
+      <label for="password" accesskey="p">password:</label><br />
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        tabindex="3"
+      />
+      <!-- Using text message for validation, enable it by uncomment code in js -->
+      <h4 id="invalidPassword" style="color: red; margin-left: 10px;" hidden>
+        password and repeat password should be the same
+      </h4>
+
+      <!-- Using images instead of text message for validation -->
+       <!-- <img src="Resources for Assignments/Valid & Not Valid Images/notvalid.png"> -->
+      <br /><br />
+
+      <!-- Repeat Password -->
+      <label for="repeatPassword" accesskey="r">repeat password:</label><br />
+      <input
+        type="password"
+        id="repeatPassword"
+        name="repeatPassword"
+        required
+        tabindex="4"
+      /><br /><br />
+
+
+      <!-- Terms and Conditions -->
+      <input type="checkbox" id="terms" name="terms" required tabindex="5" />
+      <label for="terms">
+        I agree to
+        <a href="terms.html" target="_blank" accesskey="c"
+          >terms and conditions</a
+        >
+      </label>
+      <br /><br />
+
+      <!-- Buttons -->
+      <input type="submit" value="Register" tabindex="6" />
+      <input type="reset" value="Reset" tabindex="7" />
+    </form>
+    <hr>
+    <h2>Photo Gallery</h2>
+    <div id="galleryContainer">
+      <img
+        id="galleryImage"
+        src="Resources/Images For Slide Show/1.jpg"
+        alt="Gallery slide"
+        width="350"
+        height="250"
+      />
+      <div style="margin-top: 10px;">
+        <button type="button" id="prevBtn">Previous</button>
+        <button type="button" id="playBtn">Play</button>
+        <button type="button" id="stopBtn">Stop</button>
+        <button type="button" id="nextBtn">Next</button>
+      </div>
+    </div>
+
+    <hr>
+    <h2>DOM Image Demo</h2>
+    <p>Use the buttons to create, insert, and remove an image via the DOM API.</p>
+    <div id="domControls" style="margin-bottom: 8px;">
+      <button type="button" id="appendDomBtn">Append Image</button>
+      <button type="button" id="insertBeforeBtn">Insert Image At Start</button>
+      <button type="button" id="removeDomBtn">Remove Image</button>
+    </div>
+    <div id="domContainer" style="border: 1px dashed #999; padding: 10px; min-height: 40px;">
+      <!-- images will be added here -->
+    </div>
+    
+    <script src="script.js"></script>
+  </body>
+</html>
