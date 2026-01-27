@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Rating</title>
+  <style>
+    body {
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .star {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Star Rating</h1>
+
+  <div id="starRating">
+    <img class="star" id="star1" src="Images for the rating stars assignment/empty_star.png" alt="Star 1" data-fixed="false">
+    <img class="star" id="star2" src="Images for the rating stars assignment/empty_star.png" alt="Star 2" data-fixed="false">
+    <img class="star" id="star3" src="Images for the rating stars assignment/empty_star.png" alt="Star 3" data-fixed="false">
+    <img class="star" id="star4" src="Images for the rating stars assignment/empty_star.png" alt="Star 4" data-fixed="false">
+    <img class="star" id="star5" src="Images for the rating stars assignment/empty_star.png" alt="Star 5" data-fixed="false">
+  </div>
+
+  <p>Rating: <span id="ratingValue">0</span>/5</p>
+
+  <script>
+    const stars = document.querySelectorAll('.star');
+    const ratingValue = document.getElementById('ratingValue');
+    const emptyStarSrc = 'Images for the rating stars assignment/empty_star.png';
+    const filledStarSrc = 'Images for the rating stars assignment/Filled_star.png';
+    let currentRating = 0;
+
+    stars.forEach((star, index) => {
+      // Mouse over event
+      star.addEventListener('mouseover', function() {
+        // Only change appearance if not fixed
+        if (this.dataset.fixed === 'false') {
+          // Fill this star and all stars before it
+          for (let i = 0; i <= index; i++) {
+            stars[i].src = filledStarSrc;
+          }
+          // Empty stars after it
+          for (let i = index + 1; i < stars.length; i++) {
+            stars[i].src = emptyStarSrc;
+          }
+        }
+      });
+
+      // Mouse leave event
+      star.addEventListener('mouseleave', function() {
+        // Only change if not fixed
+        if (this.dataset.fixed === 'false') {
+          // Restore to the last fixed rating
+          stars.forEach((s, i) => {
+            if (i < currentRating) {
+              s.src = filledStarSrc;
+            } else {
+              s.src = emptyStarSrc;
+            }
+          });
+        }
+      });
+
+      // Click event
+      star.addEventListener('click', function() {
+        // Toggle fixed state
+        if (this.dataset.fixed === 'false') {
+          // Fix this rating
+          currentRating = index + 1;
+          this.dataset.fixed = 'true';
+          
+          // Update display
+          ratingValue.textContent = currentRating;
+          
+          // Update all stars to show the fixed rating
+          for (let i = 0; i < stars.length; i++) {
+            if (i < currentRating) {
+              stars[i].src = filledStarSrc;
+              stars[i].dataset.fixed = 'true';
+            } else {
+              stars[i].src = emptyStarSrc;
+              stars[i].dataset.fixed = 'false';
+            }
+          }
+        } else {
+          // Unfix this rating
+          this.dataset.fixed = 'false';
+          currentRating = 0;
+          ratingValue.textContent = '0';
+          
+          // Reset all stars to empty
+          stars.forEach(s => {
+            s.src = emptyStarSrc;
+            s.dataset.fixed = 'false';
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

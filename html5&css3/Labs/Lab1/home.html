@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Welcome to our website">
+  <title>Home</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      display: grid;
+      grid-template-areas:
+        "header header header"
+        "nav nav nav"
+        "aside section article"
+        "footer footer footer";
+      grid-template-columns: 200px 1fr 200px;
+      grid-template-rows: auto auto 1fr auto;
+      min-height: 100vh;
+      gap: 10px;
+      padding: 10px;
+    }
+
+    header {
+      grid-area: header;
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      grid-area: nav;
+      background-color: #333;
+      color: white;
+      padding: 15px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+    }
+
+    nav a:hover {
+      background-color: #555;
+      border-radius: 4px;
+    }
+
+    aside {
+      grid-area: aside;
+      background-color: #5F9EA0;
+      color: white;
+      padding: 20px;
+    }
+
+    aside h3 {
+      margin-bottom: 15px;
+    }
+
+    aside ul {
+      list-style: none;
+    }
+
+    aside li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    section {
+      grid-area: section;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    section h2 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    section p {
+      margin-bottom: 15px;
+      color: #666;
+    }
+
+    article {
+      grid-area: article;
+      background-color: #e9e9e9;
+      padding: 20px;
+    }
+
+    article h3 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    article p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    footer {
+      grid-area: footer;
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        grid-template-areas:
+          "header"
+          "nav"
+          "section"
+          "aside"
+          "article"
+          "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Our Website</h1>
+    <p>Your trusted source for quality content</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="contact-us.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <aside>
+    <h3>Quick Links</h3>
+    <ul>
+      <li><a href="#" style="color: white; text-decoration: none;">Latest News</a></li>
+      <li><a href="#" style="color: white; text-decoration: none;">Popular Posts</a></li>
+      <li><a href="#" style="color: white; text-decoration: none;">Categories</a></li>
+      <li><a href="#" style="color: white; text-decoration: none;">Archives</a></li>
+    </ul>
+  </aside>
+
+  <section>
+    <h2>Main Content</h2>
+    <p>
+      Welcome to our homepage. We're dedicated to providing you with the best service possible.
+      Our team works hard to ensure customer satisfaction and deliver quality results.
+    </p>
+    <p>
+      Explore our website to learn more about what we offer. Whether you're looking for information,
+      products, or services, we have something for everyone.
+    </p>
+    <h2>Our Mission</h2>
+    <p>
+      We strive to deliver excellence in everything we do. Our mission is to create value for our
+      customers through innovation, quality, and exceptional service.
+    </p>
+  </section>
+
+  <article>
+    <h3>Latest Update</h3>
+    <time datetime="2026-01-27">January 27, 2026</time>
+    <p>
+      Check out our latest blog post about industry trends and insights. Stay informed with our
+      regular updates and expert analysis.
+    </p>
+    <h3>Featured Post</h3>
+    <p>
+      Discover our top-rated content that our readers love. Get tips, tricks, and valuable
+      information to help you succeed.
+    </p>
+  </article>
+
+  <footer>
+    <p>&copy; 2026 Your Company Name. All rights reserved.</p>
+    <p>Contact us: info@example.com | Phone: (555) 123-4567</p>
+  </footer>
+</body>
+</html>

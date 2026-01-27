@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5 Semantic Elements - Time, Meter, Mark, Progress</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    h1 {
+      color: #333;
+      border-bottom: 3px solid #007bff;
+      padding-bottom: 10px;
+    }
+    h2 {
+      color: #0056b3;
+      margin-top: 30px;
+    }
+    section {
+      background-color: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    mark {
+      background-color: #ffff00;
+      padding: 2px 4px;
+    }
+    .example {
+      background-color: #f9f9f9;
+      padding: 15px;
+      margin: 10px 0;
+      border-left: 4px solid #007bff;
+    }
+  </style>
+</head>
+<body>
+  <h1>HTML5 Semantic Elements Demo</h1>
+  <p>Exploring new semantic elements: <mark>&lt;time&gt;</mark>, <mark>&lt;meter&gt;</mark>, <mark>&lt;mark&gt;</mark>, and <mark>&lt;progress&gt;</mark></p>
+
+  <!-- TIME ELEMENT -->
+  <section>
+    <h2>1. The &lt;time&gt; Element</h2>
+    <p>The <mark>&lt;time&gt;</mark> element represents a specific date, time, or duration. It helps search engines and accessibility tools understand temporal information.</p>
+    
+    <div class="example">
+      <h3>Examples:</h3>
+      <p>The event starts at <time>14:30</time> (2:30 PM)</p>
+      <p>The meeting is scheduled for <time datetime="2024-02-15">February 15, 2024</time></p>
+      <p>Course duration: <time datetime="PT2H30M">2 hours and 30 minutes</time></p>
+      <p>Publication date: <time datetime="2024-01-27T10:30:00Z">January 27, 2024</time></p>
+      <p>Last updated: <time datetime="2024-01-25">last week</time></p>
+    </div>
+  </section>
+
+  <!-- METER ELEMENT -->
+  <section>
+    <h2>2. The &lt;meter&gt; Element</h2>
+    <p>The <mark>&lt;meter&gt;</mark> element represents a measurement (gauge) within a known range, such as disk usage, temperature, or ratings.</p>
+    
+    <div class="example">
+      <h3>Examples:</h3>
+      
+      <p><strong>Disk Space Usage:</strong></p>
+      <p>Used: <meter value="6" min="0" max="10"></meter> (60%)</p>
+      
+      <p><strong>Temperature:</strong></p>
+      <p>CPU Temp: <meter value="65" min="0" max="100" low="30" high="80" optimum="50"></meter> 65°C</p>
+      
+      <p><strong>Student Grade:</strong></p>
+      <p>Score: <meter value="8.5" min="0" max="10"></meter> (8.5/10)</p>
+      
+      <p><strong>Battery Level:</strong></p>
+      <p>Battery: <meter value="25" min="0" max="100" low="30" high="80" optimum="80"></meter> 25% (Low)</p>
+      
+      <p><strong>Internet Signal Strength:</strong></p>
+      <p>Signal: <meter value="4" min="0" max="5"></meter> (4/5 bars)</p>
+    </div>
+  </section>
+
+  <!-- MARK ELEMENT -->
+  <section>
+    <h2>3. The &lt;mark&gt; Element</h2>
+    <p>The <mark>&lt;mark&gt;</mark> element highlights or marks text that is relevant in a particular context (typically highlighted in yellow).</p>
+    
+    <div class="example">
+      <h3>Examples:</h3>
+      
+      <p>Search Results: The <mark>HTML5</mark> specification introduces many new elements including <mark>semantic</mark> tags for better document structure.</p>
+      
+      <p>Important Information: <mark>Note: All assignments must be submitted by Friday</mark></p>
+      
+      <p>Error Highlighting: The correct syntax is: &lt;<mark>article</mark>&gt; not &lt;div&gt;</p>
+      
+      <p>Learning Material: The <mark>DOCTYPE declaration</mark> is required at the beginning of every HTML5 document.</p>
+    </div>
+  </section>
+
+  <!-- PROGRESS ELEMENT -->
+  <section>
+    <h2>4. The &lt;progress&gt; Element</h2>
+    <p>The <mark>&lt;progress&gt;</mark> element represents the completion progress of a task (such as downloading, uploading, or form submission).</p>
+    
+    <div class="example">
+      <h3>Examples:</h3>
+      
+      <p><strong>File Download (50% complete):</strong></p>
+      <progress value="50" max="100"></progress> 50%
+      
+      <p><strong>Video Upload (75% complete):</strong></p>
+      <progress value="75" max="100"></progress> 75%
+      
+      <p><strong>Course Completion (3 out of 8 modules):</strong></p>
+      <progress value="3" max="8"></progress> Module 3/8
+      
+      <p><strong>Project Tasks (9 of 12 completed):</strong></p>
+      <progress value="9" max="12"></progress> 75% Done
+      
+      <p><strong>Installation (0% - Not started):</strong></p>
+      <progress value="0" max="100"></progress> 0%
+      
+      <p><strong>Processing (100% - Complete):</strong></p>
+      <progress value="100" max="100"></progress> Complete ✓
+    </div>
+  </section>
+
+  <!-- COMBINED EXAMPLE -->
+  <section>
+    <h2>5. Combined Example - Course Progress Tracker</h2>
+    <div class="example">
+      <h3>Web Development Course</h3>
+      <p>Start Date: <time datetime="2024-01-15">January 15, 2024</time></p>
+      <p>Expected Completion: <time datetime="2024-04-15">April 15, 2024</time></p>
+      
+      <p><strong>Course Progress:</strong></p>
+      <progress value="45" max="100"></progress> 45% Complete
+      
+      <p><strong>Student Performance:</strong></p>
+      <p>Grade: <meter value="8.2" min="0" max="10"></meter> 8.2/10</p>
+      <p>Attendance: <meter value="95" min="0" max="100"></meter> 95%</p>
+      
+      <p><strong>Key Topics:</strong></p>
+      <p><mark>HTML5 Semantics</mark> - Completed</p>
+      <p><mark>CSS3 Styling</mark> - In Progress</p>
+      <p>JavaScript Fundamentals - Not Started</p>
+      
+      <p><strong>Last Updated:</strong> <time datetime="2024-01-27T15:45:00">Just now</time></p>
+    </div>
+  </section>
+
+  <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #666;">
+    <p>Lab 1 - HTML5 Semantic Elements Demo | <time datetime="2024-01-27">January 27, 2024</time></p>
+  </footer>
+
+</body>
+</html>

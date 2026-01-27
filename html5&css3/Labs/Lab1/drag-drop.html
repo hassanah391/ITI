@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5 Drag and Drop</title>
+  <style>
+    body {
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    
+    #dropZone {
+      width: 100px;
+      height: 100px;
+      border: 3px solid #333;
+      background-color: #e0e0e0;
+      margin-top: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    #draggableImage {
+      width: 80px;
+      cursor: move;
+      margin-top: 20px;
+    }
+    
+    .dropped-image {
+      width: 80px;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Drag and Drop</h1>
+
+  <h2>Draggable Image</h2>
+  <img id="draggableImage" src="Images for the rating stars assignment/Filled_star.png" alt="Star" draggable="true">
+
+  <h2>Drop Zone</h2>
+  <div id="dropZone"></div>
+
+  <script>
+    const draggableImage = document.getElementById('draggableImage');
+    const dropZone = document.getElementById('dropZone');
+
+    draggableImage.addEventListener('dragstart', function(e) {
+      e.dataTransfer.effectAllowed = 'move';
+    });
+
+    dropZone.addEventListener('dragover', function(e) {
+      e.preventDefault();
+    });
+
+    dropZone.addEventListener('drop', function(e) {
+      e.preventDefault();
+      
+      const rect = dropZone.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const newImage = document.createElement('img');
+      newImage.src = draggableImage.src;
+      newImage.className = 'dropped-image';
+      newImage.style.left = (x - 40) + 'px';
+      newImage.style.top = (y - 40) + 'px';
+
+      dropZone.innerHTML = '';
+      dropZone.appendChild(newImage);
+    });
+  </script>
+
+</body>
+</html>
